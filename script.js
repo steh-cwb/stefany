@@ -9,23 +9,22 @@ const caixaPrincipal = document.querySelector('.caixa-principal');
     const textoResultado = document.querySelector('.texto-resultado');
     const perguntas = [
         {
-        enunciado: "Assim que saiu da escola, você se depara com uma nova tecnologia: um chat que consegueresponder a todas as dúvidas que uma pessoa pode ter.Além disso, o chat também gera imagens e áudios
-        hiper-realistas. Qual o seu primeiro pensamento?",
+        enunciado: "Assim que saiu da escola, você se depara com uma nova tecnologia: um chat que consegueresponder a todas as dúvidas que uma pessoa pode ter.Além disso, o chat também gera imagens e áudios hiper-realistas. Qual o seu primeiro pensamento?",
         alternativas: [
-        "Isso é assustador!",
-        "Isso é maravilhoso!"
-        ]
-        },
-        
-        {
-        enunciado: "Pergunta 2",
-        alternativas: [
-        "Alternativa 1" ,
-        "Alternativa 2"
-        ]
-        }
-        ]
+            {
+            texto: "Alternativa 1",
+            afirmação: "Isso é assustador!",
+            },
+            {
+            texto: "Alternativa 2",
+            afirmação: "Isso é maravilhoso!"
+            }
+            ]
+     },
+    ];
+       
             let atual = 0;
+            let historiaFinal = "";
             let perguntaAtual;
             function mostraPergunta() {
                 perguntaAtual = perguntas[atual];
@@ -37,9 +36,24 @@ caixaPerguntas.textContent = perguntaAtual.enunciado;
                 mostraPergunta();
             function mostraAlternativas() {
                 for (const alternativa of perguntaAtual.alternativas) {
-                    const botaoAlternativas =
-document.createElement("button");
+                    const botaoAlternativas =document. createElement("button");
                     botaoAlternativas.textContent = alternativa;
                     caixaAlternativas.appendChild(botaoAlternativas);
 
+document.createElement("button");
+                    botaoAlternativas.textContent = alternativa.texto;
+                    caixaAlternativas.appendChild(botaoAlternativas);
+                    botaoAlternativas.addEventListener("click", function )
+                        function respostaSelecionada(opcaoSelecionada) {
+                            const afirmacoes = opcaoSelecionada.afirmação;
+                            historiaFinal = afirmacoes;
+                        atual++;
+                        mostraPergunta();
+
+
+                    };
+                    caixaAlternativas.appendChild(botaoAlternativas);
+                    
+                    
             }
+        }
